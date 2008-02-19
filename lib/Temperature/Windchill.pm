@@ -13,7 +13,7 @@ Temperature::Windchill - calculate effective temperature as
 
 =head1 SYNOPSIS
 
-    use Temperature::Windchill 'windchill';
+    use Temperature::Windchill qw/ windchill_us windchill_si /;
 
     # calculate windchill in American units (Fahrenheit, MPH)
     my $wc = windchill_us($temp, $windspeed);

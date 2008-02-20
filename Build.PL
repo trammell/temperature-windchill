@@ -8,10 +8,11 @@ my $builder = Module::Build->new(
     dist_author         => 'John Trammell <johntrammell@gmail.com>',
     dist_version_from   => 'lib/Temperature/Windchill.pm',
     build_requires => {
-        'Test::More' => 0,
+        'Test::More'          => 0,
+        'Test::Pod'           => 0,
+        'Test::Pod::Coverage' => 0,
     },
     add_to_cleanup      => [ 'Temperature-Windchill-*' ],
-    create_makefile_pl => 'traditional',
 );
 
 $builder->create_build_script();

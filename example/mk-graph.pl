@@ -4,8 +4,8 @@ use strict;
 use warnings;
 use Temperature::Windchill 'windchill_us';
 
-my @wind = map { 5 * $_ } 1 .. 10;   # windspeeds
-my @temp = map { 5 * $_ } -8 .. 8;   # temperatures
+my @wind = map { 5 * $_ } 1 .. 10;   # windspeeds from 5 to 50 MPH
+my @temp = map { 5 * $_ } -8 .. 8;   # temperatures from -40 to 40 F
 
 print <<"__html__";
 <table>

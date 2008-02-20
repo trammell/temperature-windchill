@@ -7,6 +7,8 @@ abstract: calculate effective temperature on exposed skin
 license: perl
 resources:
   license: http://dev.perl.org/licenses/
+requires:
+  Exporter: 0
 build_requires:
   Test::More: 0
   Test::Pod: 0

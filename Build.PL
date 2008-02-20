@@ -7,6 +7,9 @@ my $builder = Module::Build->new(
     license             => 'perl',
     dist_author         => 'John Trammell <johntrammell@gmail.com>',
     dist_version_from   => 'lib/Temperature/Windchill.pm',
+    requires => {
+        'Exporter' => 0,
+    },
     build_requires => {
         'Test::More'          => 0,
         'Test::Pod'           => 0,

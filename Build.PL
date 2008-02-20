@@ -15,7 +15,7 @@ my $builder = Module::Build->new(
         'Test::Pod'           => 0,
         'Test::Pod::Coverage' => 0,
     },
-    add_to_cleanup      => [ 'Temperature-Windchill-*' ],
+    add_to_cleanup => [ 'Temperature-Windchill-*', '*.bak' ],
 );
 
 $builder->create_build_script;

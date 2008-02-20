@@ -15,4 +15,5 @@ my $builder = Module::Build->new(
     add_to_cleanup      => [ 'Temperature-Windchill-*' ],
 );
 
-$builder->create_build_script();
+$builder->create_build_script;
+

@@ -4,24 +4,28 @@ use strict;
 use warnings;
 use base 'Exporter';
 
-our $VERSION = '0.01';
+our $VERSION = '0.02';
 our @EXPORT_OK = qw( windchill_si windchill_us );
 
 =head1 NAME
 
-Temperature::Windchill - calculate effective temperature as 
+Temperature::Windchill - calculate effective temperature on exposed skin
 
 =head1 SYNOPSIS
 
     use Temperature::Windchill qw/ windchill_us windchill_si /;
 
-    # calculate windchill in American units (Fahrenheit, MPH)
-    my $wc = windchill_us($temp, $windspeed);
+    # calculate windchill in American units (Fahrenheit/MPH)
+    $wc_us = windchill_us($temp_in_F, $windspeed_in_MPH);
 
-    # calculate windchill in International units (Celsius, KPH)
-    my $wc = windchill_si($temp, $windspeed);
+    # calculate windchill in International units (Celsius/KPH)
+    $wc_si = windchill_si($temp_in_C, $windspeed_in_KPH);
 
 =head1 DESCRIPTION
+
+This module implements the standard US National Weather Service windchill
+temperature ("WCT") index formula, which replaced the 1945 Siple and Passel
+WCT formula in 2001.
 
 From the US National Oceanic and Atmospheric Administration ("NOAA") website:
 
@@ -35,25 +39,38 @@ makes it B<feel> much colder. If the temperature is 0 degrees Fahrenheit and
 the wind is blowing at 15 mph, the windchill is -19 degrees Fahrenheit. At this
 windchill temperature, exposed skin can freeze in 30 minutes. >>
 
+I<< ... The current formula uses advances in science, technology, and computer
+modeling to provide a more accurate, understandable, and useful formula for
+calculating the dangers from winter winds and freezing temperatures.  Wind
+Chill Temperature Comparison (Old vs. New) Clinical trials were conducted at
+the Defence and Civil Institute of Environmental Medicine in Toronto, Canada,
+and the trial results were used to improve the accuracy of the new formula and
+determine frostbite threshold values. >>
+
 =back
 
 =head2 Limitations
-
-Windchill Temperature is only defined for:
 
 =over 4
 
 =item
 
-temperatures above -50 °F (-45.5 °C) and below 50 °F (10 °C)
+WCT is only defined for temperatures above -50 °F (-45.5 °C) and below 50 °F (10 °C).
 
 =item
 
-wind speeds above 3 MPH (4.8 KPH) and below 110 MPH (177 KPH).
+WCT is only defined for wind speeds above 3 MPH (4.8 KPH) and below 110 MPH (177 KPH).
+
+=item
+
+WCT applies to living tissue at the height of five feet (152 cm), the typical
+height of an adult human face.
+
+=item
+
+Bright sunshine may increase the windchill temperature by 10 to 18 °F (5 to 10 °C).
 
 =back
-
-Bright sunshine may increase the windchill temperature by 10 to 18 °F.
 
 =head1 FUNCTIONS
 
@@ -101,15 +118,11 @@ sub windchill_si {
 
 =item
 
+L<http://www.weather.gov/os/windchill/>
+
+=item
+
 L<http://www.ofcm.gov/jagti/r19-ti-plan/pdf/entire_r19_ti.pdf>
-
-=item
-
-L<http://www.weather.gov/os/windchill/index.shtml>
-
-=item
-
-L<http://www.weather.gov/om/windchill/windchillglossary.shtml>
 
 =back
 

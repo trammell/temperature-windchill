@@ -3,8 +3,9 @@ Revision history for Temperature::Windchill
 0.01	19 Feb 2008
    * initial release
 
-0.02    20 Feb 2008
+0.02    22 Feb 2008
    * fixed documentation
    * fixed META.yml
    * fixed Build.PL
+   * added t/kwalitee.pl
 

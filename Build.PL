@@ -9,6 +9,7 @@ my $builder = Module::Build->new(
     dist_version_from   => 'lib/Temperature/Windchill.pm',
     requires => {
         'Exporter' => 0,
+        'perl'     => '5.6',
     },
     build_requires => {
         'Test::More'          => 0,

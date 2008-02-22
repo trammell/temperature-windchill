@@ -33,12 +33,8 @@ use_ok('Temperature::Windchill', 'windchill_us');
         is(round(windchill_us($temp, $speed)), $chill);
     }
 }
-#is(windchill_us(1,2), 3);
-#is(windchill_us(1,2), 3);
-#is(windchill_us(1,2), 3);
 
 sub round {
     return 0 + sprintf('%.1f' , $_[0]);
 }
-
 

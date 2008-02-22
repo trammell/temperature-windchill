@@ -9,6 +9,7 @@ resources:
   license: http://dev.perl.org/licenses/
 requires:
   Exporter: 0
+  perl: 5.6
 build_requires:
   Test::More: 0
   Test::Pod: 0

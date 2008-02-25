@@ -1,11 +1,9 @@
 Revision history for Temperature::Windchill
 
 0.02    22 Feb 2008
-   * fixed documentation
-   * fixed META.yml
-   * fixed Build.PL
+   * now requires perl 5.6
+   * fixed documentation, Build.PL, META.yml, MANIFEST
    * added t/kwalitee.pl
-   * Perl 5.6 now required
 
 0.01	19 Feb 2008
    * initial release

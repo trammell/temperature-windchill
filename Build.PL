@@ -12,6 +12,7 @@ my $builder = Module::Build->new(
         'perl'     => '5.6',
     },
     build_requires => {
+        'Pod::Coverage'       => 0,
         'Test::More'          => 0,
         'Test::Pod'           => 0,
         'Test::Pod::Coverage' => 0,

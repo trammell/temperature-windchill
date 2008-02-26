@@ -6,6 +6,9 @@ use_ok('Temperature::Windchill', 'windchill_us');
 
 # check a range of valid values
 {
+    my $wc = sub {
+        return 0 + sprintf('%.1f' , windchill_us(@_))
+    };
     my @valid = (
         # temperature, windspeed, windchill
         [  40, 15,  31.8 ],
@@ -17,24 +20,19 @@ use_ok('Temperature::Windchill', 'windchill_us');
         [ -20, 15, -45.0 ],
         [ -30, 15, -57.8 ],
         [ -40, 15, -70.6 ],
-
-        [ 5,  5,  -4.6 ],
-        [ 5, 10, -9.7 ],
-        [ 5, 15, -13 ],
-        [ 5, 20, -15.4 ],
-        [ 5, 25, -17.4 ],
-        [ 5, 30, -19.1 ],
-        [ 5, 35, -20.5 ],
-        [ 5, 40, -21.8 ],
-        [ 5, 45, -23 ],
+        [   5,  5,  -4.6 ],
+        [   5, 10,  -9.7 ],
+        [   5, 15, -13.0 ],
+        [   5, 20, -15.4 ],
+        [   5, 25, -17.4 ],
+        [   5, 30, -19.1 ],
+        [   5, 35, -20.5 ],
+        [   5, 40, -21.8 ],
+        [   5, 45, -23.0 ],
     );
     for (@valid) {
         my ($temp, $speed, $chill) = @$_;
-        is(round(windchill_us($temp, $speed)), $chill);
+        is($wc->($temp, $speed), $chill);
     }
-}
-
-sub round {
-    return 0 + sprintf('%.1f' , $_[0]);
 }
 

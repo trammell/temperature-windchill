@@ -4,7 +4,7 @@ use strict;
 use warnings;
 use base 'Exporter';
 
-our $VERSION = '0.02';
+our $VERSION = '0.03';
 our @EXPORT_OK = qw( windchill_si windchill_us );
 
 =head1 NAME
@@ -73,6 +73,10 @@ Bright sunshine may increase the windchill temperature by 10 to 18 °F (5 to 10 °
 =back
 
 =head1 FUNCTIONS
+
+Neither function provided by this module attempts to verify that either the
+temperature or the windspeed supplied by the user are within the valid input
+range.  I<Caveat programmor>.
 
 =head2 windchill_us( $temperature, $windspeed )
 

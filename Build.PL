@@ -11,10 +11,10 @@ my $builder = Module::Build->new(
         'Exporter' => 0,
     },
     build_requires => {
-        'Pod::Coverage'       => 0,
+#       'Pod::Coverage'       => 0,
         'Test::More'          => 0,
-        'Test::Pod'           => 0,
-        'Test::Pod::Coverage' => 0,
+#       'Test::Pod'           => 0,
+#       'Test::Pod::Coverage' => 0,
     },
     add_to_cleanup => [ 'Temperature-Windchill-*', '*.bak' ],
 );

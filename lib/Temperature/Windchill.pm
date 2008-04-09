@@ -3,9 +3,10 @@ package Temperature::Windchill;
 use strict;
 use warnings;
 use base 'Exporter';
+use vars qw( $VERSION @EXPORT_OK );
 
-our $VERSION = '0.03';
-our @EXPORT_OK = qw( windchill_si windchill_us );
+$VERSION   = '0.04';
+@EXPORT_OK = qw( windchill_si windchill_us );
 
 =head1 NAME
 

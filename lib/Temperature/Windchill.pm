@@ -56,7 +56,7 @@ determine frostbite threshold values. >>
 
 =item
 
-WCT is only defined for temperatures above -50 °F (-45.5 °C) and below 50 °F (10 °C).
+WCT is only defined for temperatures above -50 F (-45.5 C) and below 50 F (10 C).
 
 =item
 
@@ -69,7 +69,7 @@ height of an adult human face.
 
 =item
 
-Bright sunshine may increase the windchill temperature by 10 to 18 °F (5 to 10 °C).
+Bright sunshine may increase the windchill temperature by 10 to 18 F (5 to 10 C).
 
 =back
 
@@ -86,9 +86,9 @@ degrees Fahrenheit and windspeed in miles per hour.
 
 Example:
 
-    # what's the windchill at 10 °F and 15 MPH?
+    # what's the windchill at 10 F and 15 MPH?
     my $chill = windchill_us( 10, 15 );
-    print "the windchill is: $chill °F";
+    print "the windchill is: $chill F";
 
 =cut
 
@@ -105,9 +105,9 @@ degrees Celsius and windspeed in kilometers per hour.
 
 Example:
 
-    # what's the windchill at -5 °C and 20 KPH?
+    # what's the windchill at -5 C and 20 KPH?
     my $chill = windchill_si( -5, 20 );
-    print "the windchill is: $chill °C";
+    print "the windchill is: $chill C";
 
 =cut
 
